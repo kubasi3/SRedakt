@@ -13,5 +13,10 @@
 
 <body>
 
+
+
+<script src="/bootstrap/jQuery.js"></script>
+<script src="/bootstrap/popper.js"></script>
+<script src="/bootstrap/bootstrap.js"></script>
 </body>
 </html>

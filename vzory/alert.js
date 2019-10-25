@@ -3,6 +3,16 @@ Vstupy
     elements
     json_alert
 */
+
+Alert = funtion() {
+    this.create = function(item) {
+        var alert = document.createElement('div');
+        alert.id = 'alert' + id;
+        alert.className = 'alert alert-' + data.colors[item.styl];
+        alert.textContent = item.text;
+    }
+}
+
 elements['alert'] = function(id, id_parent) {
     const item = json_alert[id];
     var alert = document.createElement('div');
@@ -18,3 +28,5 @@ elements['alert'] = function(id, id_parent) {
     }
     
 }
+
+var alert = Alert();

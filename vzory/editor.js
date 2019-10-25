@@ -1,6 +1,14 @@
 Editor = function() {
+    var primaryConf = [];
+    primaryConf[0] = {};
+    primaryConf[0].name = 'col';
+    primaryConf[1] = {};
+    primaryConf[1].name = 'row';
+    primaryConf[2] = {};
+    primaryConf[2].name = 'alert';
+
     var navBar = new NavBar();
-    var primary = new NavElement('primary');
+    var primary = new NavElement('primary', primaryConf);
 
     navBar.child(primary.live());
 
@@ -24,11 +32,12 @@ NavElement = function(name, subButtons) {
     var button = document.createElement('a');
     button.className = 'nav-link dropdown-toggle';
     button.textContent = name;
+    button.setAttribute('data-toggle', 'dropdown');
     self.appendChild(button);
 
     var div = document.createElement('div');
     div.className = 'dropdown-menu';
-    button.appendChild(button);
+    self.appendChild(div);
 
     var subButt = [];
     for (let i = 0; i < subButtons.length; i++) {
@@ -36,7 +45,8 @@ NavElement = function(name, subButtons) {
 
         subButt[i] = document.createElement('a');
         subButt[i].className = 'dropdown-item';
-        
+        subButt[i].textContent = element.name;
+        div.appendChild(subButt[i]);
         
     }
 
