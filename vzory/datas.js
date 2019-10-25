@@ -15,3 +15,5 @@ Data = function () {
 }
 
 var data = new Data();
+
+var elements = [];
