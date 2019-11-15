@@ -9,7 +9,7 @@ drive = function () {
 
     for (let i = 0; i < json_page.length; i++) {
         const element = json_page[i];
-        elements[element.typ](element.id, 'body');
+        elements[element.typ].load(element.id, 'body');
     }
 }
 

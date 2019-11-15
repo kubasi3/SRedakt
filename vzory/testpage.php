@@ -4,10 +4,10 @@
 <head>
     <title>Maturita</title>
     <link rel="stylesheet" href="/bootstrap/bootstrap.css">
-    <script src="data.js"></script>
-    <script src="drives.js"></script>
-    <script src="rows.js"></script>
-    <script src="cols.js"></script>
+    <script src="datas.js"></script>
+    <script src="drive.js"></script>
+    <script src="row.js"></script>
+    <script src="col.js"></script>
     <script src="alert.js"></script>
 </head>
 
@@ -44,22 +44,22 @@ $row3-> id = 3;
 $row3-> typ = 'row';
 
 $row4 = new tes;
-$row4-> id = 4 ;
+$row4-> id = 4;
 $row4-> typ = 'row';
 $row5 = new tes;
-$row5-> id = 5 ;
+$row5-> id = 5;
 $row5-> typ = 'row';
 
 $col1 = new tes;
-$col1-> id = 1 ;
+$col1-> id = 1;
 $col1-> typ = 'col';
 $col1-> width['xs'] = 3;
 $col2 = new tes;
-$col2-> id = 2 ;
+$col2-> id = 2;
 $col2-> typ = 'col';
 $col2-> width['xs'] = 6;
 $col3 = new tes;
-$col3-> id = 3 ;
+$col3-> id = 3;
 $col3-> typ = 'col';
 $col3-> width['xs'] = 3;
 
@@ -79,19 +79,19 @@ $row2-> elements = [$col1, $col2, $col3];
 //$col2-> elements = [$row4]; 
 //$col3-> elements = [$row5];
 
-$json_row[1] = $row1;
-$json_row[2] = $row2;
-$json_row[3] = $row3;
-$json_row[4] = $row4;
-$json_row[5] = $row5;
+$json_row[$row1->id] = $row1;
+$json_row[$row2->id] = $row2;
+$json_row[$row3->id] = $row3;
+$json_row[$row4->id] = $row4;
+$json_row[$row5->id] = $row5;
 $json_row = json_encode($json_row);
 
-$json_col[1] = $col1;
-$json_col[2] = $col2;
-$json_col[3] = $col3;
+$json_col[$col1->id] = $col1;
+$json_col[$col2->id] = $col2;
+$json_col[$col3->id] = $col3;
 $json_col= json_encode($json_col);
 
-$json_alert[1] = $alert1;
+$json_alert[$alert1->id] = $alert1;
 $json_alert = json_encode($json_alert);
 
 echo '<script>
