@@ -7,20 +7,23 @@ var dataProperities;
 
 
 var Data = function() {
-    var navDefault = [
-        ['Základní', 'default'],
-        ['Řádek', 'row'],
-        ['Sloupec', 'col']
-    ]
-    var navTexts = [
-        ['Text', 'text'],
-        ['Nadpis 1', 'h1'],
-        ['Odstavec', 'p']
-    ]
-    var navAlerts = [
-        ['Upozornění', 'alerts'],
-        ['Upozornění', 'alert']
-    ]
+    var navs = {
+        navDefault : [
+            ['Základní', 'default'],
+            ['Řádek', 'row'],
+            ['Sloupec', 'col']
+        ],
+        navTexts : [
+            ['Text', 'text'],
+            ['Nadpis 1', 'h1'],
+            ['Odstavec', 'p'],
+            ['HTML text', 'span'],
+        ],
+        navAlerts : [
+            ['Upozornění', 'alerts'],
+            ['Upozornění', 'alert']
+        ]
+    }
 
     var properities = {
         colors : {
@@ -34,12 +37,13 @@ var Data = function() {
     }
 
     var navBar = {
-        body : [navDefault, navTexts, navAlerts],
-        alert : [navTexts, navAlerts],
-        row : [[['Základní', 'default'], ['Sloupec', 'col']], navTexts, navAlerts],
-        col : [[['Základní', 'default'], ['Řádek', 'row']], navTexts, navAlerts],
+        body : [navs.navDefault, navs.navTexts, navs.navAlerts],
+        alert : [navs.navTexts, navs.navAlerts],
+        row : [[['Základní', 'default'], ['Sloupec', 'col']], navs.navTexts, navs.navAlerts],
+        col : [[['Základní', 'default'], ['Řádek', 'row']], navs.navTexts, navs.navAlerts],
         h1 : [],
-        p : []
+        p : [],
+        span : [],
     }
     var selfBar = {
         alert : {
@@ -91,7 +95,12 @@ var Data = function() {
             nazev : 'Nadpis 1',
             dom : 'h1',
             text : 'Nadpis 1'
-        }
+        },
+        span : {
+            nazev : 'HTML text',
+            dom : 'span',
+            text : 'text',
+        },
     }
 
     this.selfBar = function(id){if(selfBar[id]){return selfBar[id]} else{return false}};
