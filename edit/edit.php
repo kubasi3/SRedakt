@@ -9,10 +9,14 @@
 </head>
 
 <body>
-<div id="editPanel"></div>
-<div id = "body">
-    <br>
-    <div class="container-fluid"></div>
+<div id="editPanel" class='fixed-top'></div>
+<div class="row" style="margin-top:200px">
+    <div class="col col-10">
+        <div id = "body" class="container-fluid">
+            <br>
+        </div>
+    </div>
+    <div class="col col-2" id="navBar"></div>
 </div>
 
 <script src="/bootstrap/jQuery.js"></script>
